@@ -63,8 +63,7 @@ position: relative;
     border-left: 2px solid black;
 }
 .back {
-    .back-to-top-button {
-        position: absolute;
+         position: absolute;
         bottom: 25px;
         left: 25px;
         border: 1px solid black;
