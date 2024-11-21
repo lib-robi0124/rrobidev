@@ -67,5 +67,6 @@ position: relative;
         bottom: 25px;
         left: 25px;
         border: 1px solid black;
-        border-radius: 3px;     
+        border-radius: 3px;  
+        float: right;   
 }
