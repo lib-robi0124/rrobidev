@@ -7,7 +7,7 @@
 body {
     position: relative;
 }
-#head1 {
+#head1, #head5 {
     width: 500px;
     height: 100px;
     border: 3px solid black;
@@ -35,12 +35,7 @@ body {
     border: 3px solid black;
     margin-left: 100px;
 }
-#head5 {
-    width: 500px;
-    height: 100px;
-    border: 3px solid black;
-    margin-left: 100px;
-}
+
 #footer-txt {
     float: left;
     margin-top: 25px;
