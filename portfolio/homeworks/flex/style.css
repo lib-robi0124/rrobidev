@@ -4,59 +4,63 @@
     box-sizing: border-box;
 }
 .main-pic {
-    width: 510px;
+    width: 500px;
     height: 500px;
     margin-left: 250px;
     margin-top: 100px;
-}
-.first3 {
-    width: 510px;
-    height: 375px;
     background-color: red;
-    
+    display: flex;
 }
+.first3-left {
+      width: 125px;
+      height: 500px;
+      display: flex;
+      background-color: aqua;
+      flex-direction: column;
+            
+    }
 #white-up {
     width: 125px;
     height: 150px;
     border: 3px solid black;
     background-color: white;
-    
+   
 }
 #white-middle {
-    display: flex;
     width: 125px;
     height: 225px;
     border: 3px solid black;
     background-color: white;
-    align-items: flex-end;
+     
       }
-.other3 {
-    width: 510px;
+#blue {
+        width: 125px;
+        height: 130px;
+        border: 3px solid black;
+        background-color: blue;
+         
+}
+.other3-rigth {
+    width: 375px;
     height: 125px;
     background-color: white;
     border: 3px solid black;
+    border-right: 3px solid black;
     display: flex;
-
+    align-self: flex-end;
 }
 #white-down {
     width: 350px;
-    height: 130px;
-    border: 3px solid black;
+    height: 122px;
+    border: 2px solid black;
     background-color: white;
-   justify-content: baseline;
-                
+                  
 }
-#blue {
-    width: 125px;
-    height: 130px;
-    border: 3px solid black;
-    background-color: blue;
-   
-}
-.yellow {
+
+#yellow {
     width: 30px;
     height: 70px;
     background-color: yellow;
-    border: 3px solid black;
-    align-self: flex-end;  
+    border-top: 3px solid black;
+    align-self: flex-end;
 }
