@@ -15,7 +15,6 @@
       width: 125px;
       height: 500px;
       display: flex;
-      background-color: aqua;
       flex-direction: column;
             
     }
