@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .Box {
+    width: 750px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: red;
+  }
+  .Box > div {
+    flex: 1 1 48%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loading-lines2 {
+    display: inline-block;
+    padding: 3px;
+    position: relative;
+    width: 30%;
+    font-size: 1rem;
+    color: white;
+    background-color: #c76a61;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  .loading-lines2::before,
+  .loading-lines2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: white;
+    animation: lines2 4s infinite;
+  }
+  .loading-lines2::before {
+    top: 0;
+  }
+  .loading-lines2::after {
+    bottom: 0;
+  }
+  
+  @keyframes lines2 {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 100%;
+    }
+    80% {
+      width: 100%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .loading-lines2::before,
+  .loading-lines2::after {
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+  }
+  .loading-fulll {
+    display: inline-block;
+    padding: 3px;
+    position: relative;
+    width: 30%;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #    background-color: #c76a61;
+    ;
+    overflow: hidden;
+    animation: fulll 6s ease-in-out infinite;
+  }
+  
+  .loading-fulll::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    animation: fulltext 6s forwards;
+  }
+  
+  @keyframes fulltext {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  .loading-fulll::before {
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+  }
+  .circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 50px;
+  }
+  .center-circle {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .circle-1,
+  .circle-2 {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .circle-1 {
+    animation: move-left 3s ease-in-out infinite;
+  }
+  .circle-2 {
+    animation: move-right 3s ease-in-out infinite;
+  }
+  @keyframes move-left {
+    0% {
+      transform: rotate(0deg) translateX(25px) rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg) translateX(25px) rotate(-180deg);
+    }
+    60% {
+      transform: rotate(180deg) translateX(25px) rotate(-180deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(25px) rotate(0deg);
+    }
+  }
+  @keyframes move-right {
+    0% {
+      transform: rotate(0deg) translateX(-25px) rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg) translateX(-25px) rotate(180deg);
+    }
+    60% {
+      transform: rotate(180deg) translateX(-25px) rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(-25px) rotate(0deg);
+    }
+  }
+  .square {
+    display: inline-block;
+    padding: 3px;
+    position: relative;
+    height: 35px;
+    width: 35px;
+    color: white;
+    background-color: #e84c3d;
+    text-transform: uppercase;
+    overflow: hidden;
+    animation: fulll 4s ease-in-out infinite;
+  }
+  .square::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    animation: fulltext 4s forwards;
+  }
+  
+  .square::before {
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+  }
+  .box-4 {
+    position: relative;
+    width: 150px; 
+    height: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .circle-square {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: followSquareEdge 2s linear infinite;
+  }
+  
+  @keyframes followSquareEdge {
+  
+    0% {
+      transform: translate(-50%, -50%) translateX(25px) translateY(-25px); 
+    }
+  
+    25% {
+      transform: translate(-50%, -50%) translateX(25px) translateY(25px); 
+    }
+  
+    50% {
+      transform: translate(-50%, -50%) translateX(-25px) translateY(25px); 
+    }
+   
+    75% {
+      transform: translate(-50%, -50%) translateX(-25px) translateY(-25px); 
+    }
+   
+    100% {
+      transform: translate(-50%, -50%) translateX(25px) translateY(-25px); 
+    }
+  }
+  
