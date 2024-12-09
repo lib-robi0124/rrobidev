@@ -6,7 +6,7 @@ if ((money > usermoney) || (money == usermoney)){
         result = money - usermoney;
         return result;
     }
-    alert(`you have ${atm(usermoney)} den on your account`);
+    alert(`You have still ${atm(usermoney)} den on your account`);
 } else {
-    alert("not enougth money on your account");
+    alert("Not enougth money on your account");
 }
