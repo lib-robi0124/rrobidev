@@ -7,4 +7,6 @@ let sumArray = 0;
 for (let i = 0; i < 5; i++) {
   sumArray = sumArray + arrayNumbers[i];
 }
-console.log(`The sum of array numbers is ${sumArray}`);
+alert(`Your array for sum is ${arrayNumbers}`);
+
+alert(`The sum of array numbers is ${sumArray}`);
