@@ -1,8 +1,8 @@
 let arrayFirstName = ["Robert", "Sara" , "Toska"];
 let arraySecondName = ["Ristovski", "Ada", "Giceva"];
 let fisrtSecondName = [];
-let firstname;
-let secondName;
+let firstname, secondName;
+
 for ( i=0; i < arrayFirstName.length; i++) {
   firstname = arrayFirstName[i];
   fisrtSecondName.push(firstname);
@@ -12,8 +12,8 @@ for ( i=0; i < arrayFirstName.length; i++) {
 console.log(fisrtSecondName);
 let fullInfoNames = [];
 let item=0;
-let itemFullInfoName;
-let j;
+let itemFullInfoName, j;
+
 for ( i=1; i < fisrtSecondName.length; i++) {
   j=i-1
   if (j % 2 == 0){
