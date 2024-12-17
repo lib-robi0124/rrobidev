@@ -1,7 +1,14 @@
 let arrayNumbers = [];
-for (let i = 0; i < 5; i++) {
-  let addToArrayNumbers = parseInt(prompt("Enter a number:"));
-  arrayNumbers.push(addToArrayNumbers);
+i = 0;
+while (i < 5) {
+    let addToArrayNumbers = parseInt(prompt("Enter a number:"));
+  if(!isNaN(addToArrayNumbers)){
+   arrayNumbers.push(addToArrayNumbers);
+   i++;    
+  }
+  else{
+  alert("This is not a number, please enter a number");
+  }
 }
 let sumArray = 0;
 for (let i = 0; i < 5; i++) {
