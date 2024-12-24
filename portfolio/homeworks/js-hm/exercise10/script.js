@@ -3,7 +3,7 @@ function Academy(academyName = '', numberOfGroups = '', numberOfClassrooms = '')
     this.numberOfGroups = numberOfGroups;
     this.numberOfClassrooms = numberOfClassrooms;
 }
-function Groups(name = '') {
+function Group(name = '') {
     this.name = name;
     this.numberOfStudents = 0;
     this.students = [];
@@ -22,9 +22,9 @@ function Student(fName = '', lName = '', age = '', email = '', academy = '', gro
 }
 
 let academySEDC = new Academy("Qinshift", 3, 5);
-let g1 = new Groups("G1");
-let g2 = new Groups("G2");
-let g3 = new Groups("G3");
+let g1 = new Group("G1");
+let g2 = new Group("G2");
+let g3 = new Group("G3");
 
 let student1 = new Student("Robert", "Ristovski", 52, "rrobi01@yahoo.com", academySEDC.academyName, g2.name);
 let student2 = new Student("Sara", "Ristovska", 20, "rsara04@gmail.com", academySEDC.academyName, g1.name);

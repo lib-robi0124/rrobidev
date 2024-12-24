@@ -8,7 +8,7 @@ function gradeToPass(exam1, exam2, exam3, exam4, exam5){
         console.log("Please enter grade number lower than 11"); 
     } else {
         passGrade = (exam1 + exam2 + exam3 + exam4 + exam5) / 5;
-        if(passGrade => 8){
+        if(passGrade >= 8){
             console.log("Student pass");
         } else {
             console.log("Student fail");
@@ -19,4 +19,5 @@ function gradeToPass(exam1, exam2, exam3, exam4, exam5){
 gradeToPass(10, 6, 8, 9, 6);
 gradeToPass(10, 5, 8, 9, 6);
 gradeToPass(10, 11, 8, 9, 6);
-gradeToPass(10, tr, 8, 9, 6); // neznam zosto ne raboti ova...
+gradeToPass(10, tr, 8, 9, 6); 
+// ne raboti bidejki go tretira kako varijabla koja nikade ne e deklarirana
