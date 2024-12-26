@@ -1,17 +1,88 @@
+body {
+  padding: 0;
+}
+
 * {
-  padding: 10px;
-  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: fantasy;
-  font-size: 16px;
-  font-style: oblique;
-  color: #676a81;
-  background: #fff;
-  max-width: 1920px;
-  margin: 0;
+
+.background-rectangule {
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(206, 212, 182, 0.4);
+  position: absolute;
 }
-.navbar {
-  font-family:"Poppins-italic.ttf";
+
+
+/* ------- nav --------- */
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+nav {
+  background: white;
+  height: 100px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+nav li {
+  position: relative;
+  margin-left: 45px;
+  font-family: "Inter", sans-serif;
+}
+
+li {
+  display: list-item;
+}
+
+nav a {
+  color: #8e7199;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+
+/* ------- Containers --------- */
+
+.containers {
+  width: 200px;
+  margin: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.welcome-section {
+  width: 400px;
+}
+
+.welcome-section h1 {
+  font-family: "Playfair Display", serif;
+}
+
+.intro-text {
+  font-family: "Amiri", serif;
 }
