@@ -55,16 +55,6 @@ header {
 .homework-list a:hover {
     background-color: #4e00cc;
 }
-.homework-list2 a {
-    text-decoration: none;
-    color: white;
-    background-color: #4e00cc;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-}
-
 
 footer {
     margin-top: 20px;
