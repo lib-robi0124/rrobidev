@@ -15,15 +15,21 @@ body {
     overflow: hidden;
 }
 
-#display{
+.display{
     width: 100%;
-    padding: 35px;
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: left;
     border: none;
     background-color: hsl(0, 0%, 30%);
     color: white;
+    overflow: hidden;
 
+}
+#inputValue {
+    padding: 15px;
+    white-space: nowrap;
+    text-align: end;
+    font-weight: 400;
 }
 #keys{
     display: grid;
