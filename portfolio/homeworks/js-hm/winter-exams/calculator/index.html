@@ -10,30 +10,31 @@
 
 <body>
 
-    <div id="calculator">
-        <input id="display" readonly>
-
+     <div id="calculator">
+        <!-- <input id="display" readonly> -->
+        <div class="display">
+            <h1 id="inputValue">0</h1>
+          </div>
         <div id="keys">
-            <button onclick="appenedToDisplay('+')" class="operator-btn">+</button>
-            <button onclick="appenedToDisplay('7')">7</button>
-            <button onclick="appenedToDisplay('8')">8</button>
-            <button onclick="appenedToDisplay('9')">9</button>
-            <button onclick="appenedToDisplay('-')" class="operator-btn">-</button>
-            <button onclick="appenedToDisplay('4')">4</button>
-            <button onclick="appenedToDisplay('5')">5</button>
-            <button onclick="appenedToDisplay('6')">6</button>
-            <button onclick="appenedToDisplay('*')" class="operator-btn">*</button>
-            <button onclick="appenedToDisplay('1')">1</button>
-            <button onclick="appenedToDisplay('2')">2</button>
-            <button onclick="appenedToDisplay('3')">3</button>
-            <button onclick="appenedToDisplay('/')" class="operator-btn">/</button>
-            <button onclick="appenedToDisplay('0')">0</button>
-            <button onclick="appenedToDisplay('.')">.</button>
-            <button onclick="calculate()" class="operator-btn">=</button>
-            <button onclick="clearDisplay('')" class="operator-btn">C</button>
+            <button onclick="handleInteraction('+')" class="operator-btn">+</button>
+            <button onclick="handleInteraction('7')">7</button>
+            <button onclick="handleInteraction('8')">8</button>
+            <button onclick="handleInteraction('9')">9</button>
+            <button onclick="handleInteraction('-')" class="operator-btn">-</button>
+            <button onclick="handleInteraction('4')">4</button>
+            <button onclick="handleInteraction('5')">5</button>
+            <button onclick="handleInteraction('6')">6</button>
+            <button onclick="handleInteraction('*')" class="operator-btn">*</button>
+            <button onclick="handleInteraction('1')">1</button>
+            <button onclick="handleInteraction('2')">2</button>
+            <button onclick="handleInteraction('3')">3</button>
+            <button onclick="handleInteraction('/')" class="operator-btn">/</button>
+            <button onclick="handleInteraction('0')">0</button>
+            <button onclick="handleInteraction('.')">.</button>
+            <button onclick="handleEvaluate('=')" class="operator-btn">=</button>
+            <button onclick='handleReset("C")' class="operator-btn">C</button>
         </div>
     </div>
-
 
     <script src="calculator.js"></script>
 </body>
