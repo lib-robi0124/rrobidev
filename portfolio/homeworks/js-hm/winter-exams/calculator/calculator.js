@@ -1,20 +1,64 @@
-// calculate input
 
-const display = document.getElementById('display');
+const displayInput = document.getElementById('inputValue');
 
-function appenedToDisplay(input) {
-    display.value += input;
+// variables
+const operators = ['-', '+', '/', '*', '%'];
+let operations = [];
+let currValue = '';
+
+// functions & operations
+function handleInteraction(value) {
+    if (operators.includes(value)) {
+        handleOperatorInput(value)
+    } else (
+        handleNumericInput(value)
+    )
+    updateUI();
 }
 
-function clearDisplay() {
-    display.value = " ";
+function handleNumericInput(value) {
+    if (value === '.' && currValue.includes('.')) { return }
+    currValue += value;
 }
 
-function calculate() {
-    try { 
-    display.value = eval(display.value);
-    } 
-    catch (error) {
-    display.value = "Error!";
+function handleOperatorInput(value) {
+    if (!currValue) { return }
+    operations.push(currValue);
+    operations.push(value);
+    currValue = '';
+}
+
+function handleEvaluate() {
+    if (operations.length === 0) { return }
+    let finalAmount = operations [0];
+    let prevOperator = null;
+    if (!currValue) {
+        operations.pop();
+    } else {
+        operations.push(currValue);
+        currValue = '';
     }
+    for (let i = 1; i < operations.length; i++) {
+        if (i % 2 === 0) {
+            //nmeric value
+            finalAmount = eval(`${finalAmount} ${prevOperator} ${operations[i]}`);
+        } else {
+            //operator value
+            prevOperator = operations[i];
+        }
+    }
+    operations = [];
+    currValue = finalAmount.toFixed(2);
+    updateUI();
+}
+
+function handleReset() {
+    currValue = '';
+    operations = [];
+    updateUI();
+}
+
+function updateUI() {
+    const displayString = operations.join(' ') + ' ' + currValue;
+    displayInput.innerText = displayString.trim() ? displayString: '0';
 }
