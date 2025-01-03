@@ -1,11 +1,8 @@
-
 const displayInput = document.getElementById('inputValue');
-
 // variables
 const operators = ['-', '+', '/', '*', '%'];
 let operations = [];
 let currValue = '';
-
 // functions & operations
 function handleInteraction(value) {
     if (operators.includes(value)) {
@@ -15,19 +12,16 @@ function handleInteraction(value) {
     )
     updateUI();
 }
-
 function handleNumericInput(value) {
     if (value === '.' && currValue.includes('.')) { return }
     currValue += value;
 }
-
 function handleOperatorInput(value) {
     if (!currValue) { return }
     operations.push(currValue);
     operations.push(value);
     currValue = '';
 }
-
 function handleEvaluate() {
     if (operations.length === 0) { return }
     let finalAmount = operations [0];
