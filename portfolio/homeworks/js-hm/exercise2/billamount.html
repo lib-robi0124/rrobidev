@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="billamount.css" />
+    <title>billamount</title>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="section">
+        <h3>Expense Tracker</h3>
+        <fieldset>
+          <div class="row">
+            <label for="description">Description</label>
+            <input type="text" id="description" />
+          </div>
+          <div class="row">
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" />
+          </div>
+
+          <div class="row">
+            <label for="devices">Category</label>
+            <select name="devices" id="devices">
+              <option value="Food">Food</option>
+              <option value="Travel">Travel</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Bills">Bills</option>
+            </select>
+          </div>
+          <div class="row">
+            <button id="btn" onclick="collect()">Add Expense</button>
+          </div>
+        </fieldset>
+        <p id="sign-up-paragraph"></p>
+      </div>
+    </div>
+
+    <label>Expense (all cost: </label>
+    <label id="middle"></label><label>) </label>
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody id="addTo"></tbody>
+    </table>
+
+    <h3 id="revert">Revert history</h3>
+    <div>
+      <ul id="listRem"></ul>
+    </div>
+  </body>
+  <script src="billamount.js"></script>
+</html>

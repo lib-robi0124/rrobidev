@@ -1,0 +1,25 @@
+.row {
+    display: flex;
+    gap: 12px;
+    margin: 4px;
+  }
+
+  .row > label {
+    width: 100px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section {
+    border: 2px dotted royalblue;
+    margin: 8px;
+    padding: 8px;
+  }
+
+table, tbody, thead, tr, th, td{
+    border-collapse: collapse;
+    border: 2px solid black;
+  }
