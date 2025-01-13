@@ -39,7 +39,6 @@ btn.addEventListener("click", function () {
     table.lastElementChild.appendChild(row);
   }
 });
-function updateTable() {}
 // Reset button functionality
 let reset = document.getElementById("reset");
 reset.addEventListener("click", function () {

@@ -5,6 +5,10 @@ function collect() {
     ++count;
     let description = document.getElementById("description").value;
     let amountValue = document.getElementById("amount").value;
+    if (!/^\d+$/.test(amountValue)) {
+        alert("Please enter a valid amount containing only numbers.");
+        return;
+      }
     let option = document.getElementsByTagName("option");
     let optionValue;
     for (let i = 0; i < option.length; i++) {
