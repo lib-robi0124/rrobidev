@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <title>online-calculator</title>
+</head>
+
+<body>
+
+     <div id="calculator">
+          <div class="display">
+            <h1 id="inputValue">0</h1>
+          </div>
+        <div id="keys">
+            <button onclick="handleInteraction('+')" class="operator-btn">+</button>
+            <button onclick="handleInteraction('7')">7</button>
+            <button onclick="handleInteraction('8')">8</button>
+            <button onclick="handleInteraction('9')">9</button>
+            <button onclick="handleInteraction('-')" class="operator-btn">-</button>
+            <button onclick="handleInteraction('4')">4</button>
+            <button onclick="handleInteraction('5')">5</button>
+            <button onclick="handleInteraction('6')">6</button>
+            <button onclick="handleInteraction('*')" class="operator-btn">*</button>
+            <button onclick="handleInteraction('1')">1</button>
+            <button onclick="handleInteraction('2')">2</button>
+            <button onclick="handleInteraction('3')">3</button>
+            <button onclick="handleInteraction('/')" class="operator-btn">/</button>
+            <button onclick="handleInteraction('0')">0</button>
+            <button onclick="handleInteraction('.')">.</button>
+            <button onclick="handleEvaluate('=')" class="operator-btn">=</button>
+            <button onclick='handleReset("C")' class="operator-btn">C</button>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 95%);
+}
+#calculator{
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 50px;
+    max-width: 90%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.display{
+    width: 100%;
+    font-size: 1rem;
+    text-align: left;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    overflow: hidden;
+
+}
+#inputValue {
+    padding: 15px;
+    white-space: nowrap;
+    text-align: end;
+    font-weight: 400;
+}
+#keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 25px;
+
+}
+button {
+    width: 100%; /* Adjust size dynamically */
+    aspect-ratio: 1; /* Maintain a square shape */
+    border-radius: 50%;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    font-size: 2rem; /* Reduced font size for smaller screens */
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover{
+    background-color: hsl(0, 0%, 50%);
+}
+button:active{
+    background-color: hsl(0, 0%, 60%);
+}
+.operator-btn{
+    background-color: hwb(49 9% 17%);
+}
+.operator-btn:hover{
+    background-color: hwb(49 9% 50%);
+}
+.operator-btn:active{
+    background-color: hwb(49 9% 65%);
+}
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    #calculator {
+        max-width: 95%;
+        border-radius: 30px;
+    }
+
+    .display {
+        font-size: 1.2rem;
+    }
+
+    #keys {
+        gap: 5px;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 1.5rem;
+    }
+}
