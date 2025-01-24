@@ -14,15 +14,10 @@ function checkNumber(num) {
   console.log(`The Number ${num} is even:`, isNumberEven(num));
   console.log(`The Number ${num} is odd:`, isNumberOdd(num));
 
-  checkPositivity(num);
+  checkisPositive(num);
 }
 
-function checkPositivity(num) {
-  if (num < 0) {
-    console.log("This number is negative.");
-  } else if (num > 0) {
-    console.log("This number is positive.");
-  } else {
-    console.log("This number is 0.");
-  }
-}
+const checkisPositive = (num) => {
+  if (num > 0) return  console.log(`This number ${num}is positive.`);;
+  return console.log(`This number ${num} is negative.`);
+};
