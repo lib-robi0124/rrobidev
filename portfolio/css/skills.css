@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(240, 235, 235);
+}
+h1 {
+    font-family: fantasy;
+    text-decoration: dotted;
+}
+.list-group-item {
+    font-style: italic;
+    color: blue;
+    background-color: aquamarine;
+
+}
+.list-group {
+    max-width: 500px;
+}
