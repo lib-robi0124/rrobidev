@@ -196,7 +196,7 @@
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
-  font-size: var(--bs-body-font-size);
+  font-size: 20px;
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
@@ -219,7 +219,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
-  color: var(--bs-heading-color);
+  color: #e2e2e2;
 }
 
 h1, .h1 {
@@ -3894,14 +3894,17 @@ textarea.form-control-lg {
   --bs-nav-pills-border-radius: var(--bs-border-radius);
   --bs-nav-pills-link-active-color: #fff;
   --bs-nav-pills-link-active-bg: #0d6efd;
+  gap: 10px;
 }
 .nav-pills .nav-link {
   border-radius: var(--bs-nav-pills-border-radius);
+  gap: 10px;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: var(--bs-nav-pills-link-active-color);
   background-color: var(--bs-nav-pills-link-active-bg);
+  gap: 5px;
 }
 
 .nav-underline {
@@ -3929,6 +3932,7 @@ textarea.form-control-lg {
 .nav-fill .nav-item {
   flex: 1 1 auto;
   text-align: center;
+  gap: 10px;
 }
 
 .nav-justified > .nav-link,
