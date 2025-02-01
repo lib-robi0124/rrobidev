@@ -24,9 +24,20 @@ console.log(highestValueCarts[0]);
 // Find all products with a discount greater than 15% carts[0].products[0].discountPercentage
 console.log(discountProductsInCarts = data.carts.flatMap(s => s.products.filter(s => s.discountPercentage > 15.0)));
 
-// The user ID of the cart with the highest total quantity
+// The user ID of the cart with the highest total quantity carts[0].totalQuantity
+console.log(userHighestTotalQuantity = data.carts.sort((a, b) => b.totalQuantity - a.totalQuantity));
+console.log(userHighestTotalQuantity[0].id);
 
-// * The most expensive product in all carts (before discount)
+// The most expensive product in all carts {(before discount) [carts[0].products[0].total / carts[0].products[0].quantity]}
+const expensiveProducts = data.carts.flatMap(s => 
+    s.products.map(s => ({
+        title: s.title,
+        pricePerUnit: s.total / s.quantity})));
+        
+console.log(expensiveProducts);
+const maxExpensiveProduct = expensiveProducts.sort((a, b) => b.pricePerUnit - a.pricePerUnit);
+console.log(`${maxExpensiveProduct[0].title} ${maxExpensiveProduct[0].pricePerUnit}`);
+
 // * The average discounted total per cart
 // * The top 3 most expensive products after discount
 
