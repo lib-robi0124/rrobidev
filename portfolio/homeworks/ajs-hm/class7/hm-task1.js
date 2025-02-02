@@ -26,7 +26,8 @@ fetch("https://dummyjson.com/recipes?limit=0")
     console.log("The average cooking time of all pasta recipes recipes[0].tags, recipes[0].cookTimeMinutes");
     console.log(timeCookPasta = data.recipes.filter(s => s.tags.some(tag => tag.toLowerCase().includes("pasta"))));
     const totalCookingTime = timeCookPasta.reduce((sum, recipe) => sum + recipe.cookTimeMinutes, 0);
-    console.log(avgTootalCookingTime = totalCookingTime / timeCookPasta.length);
+    const avgTootalCookingTime = totalCookingTime / timeCookPasta.length
+    console.log(avgTootalCookingTime.toFixed(2));
 
     console.log("Find the recipe with the lowest number of reviews recipes[0].reviewCount");
     const lowRatingRecipe = data.recipes.sort((a, b) => a.reviewCount - b.reviewCount);

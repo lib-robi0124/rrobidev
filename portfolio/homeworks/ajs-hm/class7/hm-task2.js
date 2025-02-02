@@ -14,7 +14,7 @@ console.log("Check if there is any cart with a total value above $100,000 carts[
 console.log(valueProductsInCarts = data.carts.filter(s => s.products.filter(s => s.price > 100000.00)));
 
 console.log("The total revenue from all carts (sum of all discountedTotal values)  carts[0].discountedTotal");
-console.log(totalDiscountedInCards = data.carts.reduce((sum, cart) => sum + cart.discountedTotal, 0));
+console.log(totalDiscountedInCards = data.carts.reduce((sum, cart) => sum + cart.discountedTotal, 0).toFixed(2));
 
 console.log("The cart with the highest total value");
 const highestValueCarts = data.carts.sort((a, b) => b.total - a.total);
@@ -40,7 +40,7 @@ console.log(`${maxExpensiveProduct[0].title} ${maxExpensiveProduct[0].pricePerUn
 
 console.log("The average discounted total per cart    carts[0].discountedTotal");
 console.log(avgTotaldiscounted = data.carts.flatMap(s => s.products.map(s => s.discountedTotal)));
-console.log(`${totalDiscountedInCards/avgTotaldiscounted.length}`);
+console.log(`${(totalDiscountedInCards/avgTotaldiscounted.length).toFixed(2)}`);
 
 console.log("The top 3 different most expensive products after discount {carts[0].products[0].discountedTotal / carts[0].products[0].quantity]}");
 const expensiveProductCurrent = data.carts.flatMap(s =>
