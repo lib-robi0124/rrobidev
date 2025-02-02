@@ -37,21 +37,26 @@ fetch('https://dummyjson.com/products/category/skin-care')
     const ratingSkincare = skincare.products.sort((a, b) => b.rating - a.rating);
     console.log(skincare.products[0].title);
 });
-// * The average discount percentage of products with a rating above 4.5
+// * The average discount percentage of products with a rating above 4.5 products[0].discountPercentage
 fetch('https://dummyjson.com/products?limit=0')
 .then(response => response.json())
 .then(products => {
     console.log(products);
+
     const above45products = products.products.filter(s => s.rating > 4.5);
-    for (let i = 0; i < above45products.length; i++) {
-        console.log(above45products[i].discountPercentage);        
-    }});
+    console.log(above45products);
+    
+    const totalDIscountPercentage = above45products.reduce((sum, product) => sum + product.discountPercentage, 0);
+    const avgTotalPercentage = totalDIscountPercentage / above45products.length;
+    console.log(avgTotalPercentage.toFixed(2));
+
+
    // * Find the product with the highest price
    const maxPriceProduct = products.products.sort((a, b) => b.price - a.price);
    console.log(maxPriceProduct[0]);
 // * The product with the lowest price
 const minPriceProduct = products.products.sort((a, b) => a.price - b.price);
 console.log(maxPriceProduct[0]);
+});
+    
 
-    
-    
