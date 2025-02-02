@@ -10,7 +10,7 @@ console.log(titleCarts = data.carts.flatMap(s => s.products.map(s => s.title)));
 console.log("The total quantity of all products purchased carts[0].totalQuantity");
 console.log(totalQuantityProducts = data.carts.reduce((sum, cart) => sum + cart.totalQuantity, 0));
 
-console.log("heck if there is any cart with a total value above $100,000 carts[0].products[0].price");
+console.log("Check if there is any cart with a total value above $100,000 carts[0].products[0].price");
 console.log(valueProductsInCarts = data.carts.filter(s => s.products.filter(s => s.price > 100000.00)));
 
 console.log("The total revenue from all carts (sum of all discountedTotal values)  carts[0].discountedTotal");
