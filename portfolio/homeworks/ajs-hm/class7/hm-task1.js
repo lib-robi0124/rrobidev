@@ -16,7 +16,7 @@ fetch("https://dummyjson.com/recipes?limit=0")
     console.log("Recipes that are served as both Lunch and Dinner");
     console.log(lunchDinner = data.recipes.filter(s => s.mealType.includes("Lunch")).filter(s => s.mealType.includes("Dinner")));
     
-    console.log("The ingredients needed for "Mango Salsa Chicken" dish");
+    console.log("The ingredients needed for 'Mango Salsa Chicken' dish");
     const mangoIngredients = data.recipes.filter(s => s.name === "Mango Salsa Chicken")
     console.log(mangoIngredients[0].ingredients);
 
