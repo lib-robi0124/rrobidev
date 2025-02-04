@@ -22,6 +22,8 @@ fetch("https://dummyjson.com/recipes?limit=0")
 
     console.log("Calculate the average number of calories for all American cusine recipes [0].cuisine");
     console.log(americanRecipes = data.recipes.filter(s => s.cuisine.includes("American")));
+    console.log(americanRecipes[0].caloriesPerServing);
+    
 
     console.log("The average cooking time of all pasta recipes recipes[0].tags, recipes[0].cookTimeMinutes");
     console.log(timeCookPasta = data.recipes.filter(s => s.tags.some(tag => tag.toLowerCase().includes("pasta"))));

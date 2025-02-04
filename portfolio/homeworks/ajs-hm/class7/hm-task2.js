@@ -26,7 +26,7 @@ console.log(discountProductsInCarts = data.carts.flatMap(s => s.products.filter(
 
 console.log("The user ID of the cart with the highest total quantity carts[0].totalQuantity");
 console.log(userHighestTotalQuantity = data.carts.sort((a, b) => b.totalQuantity - a.totalQuantity));
-console.log(userHighestTotalQuantity[0].id);
+console.log(userHighestTotalQuantity[0].userId);
 
 console.log("The most expensive product in all carts {(before discount) [carts[0].products[0].total / carts[0].products[0].quantity]}");
 const expensiveProducts = data.carts.flatMap(s => 

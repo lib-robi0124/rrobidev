@@ -6,7 +6,7 @@ fetch("https://dummyjson.com/products/category/laptops")
     console.log(laptops);
    
  // * All laptops in stock ordered by price descending
-    console.log(laptopsSort = laptops.products.sort((a, b) => b.prices - a.prices));
+    console.log(laptopsSort = laptops.products.sort((a, b) => b.price - a.price));
      
 });
 
@@ -56,7 +56,7 @@ fetch('https://dummyjson.com/products?limit=0')
    console.log(maxPriceProduct[0]);
 // * The product with the lowest price
 const minPriceProduct = products.products.sort((a, b) => a.price - b.price);
-console.log(maxPriceProduct[0]);
+console.log(minPriceProduct[0]);
 });
     
 
