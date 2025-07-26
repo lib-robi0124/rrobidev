@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Space between image and text */
+    padding: 20px;
+    flex-wrap: wrap; /* Makes it responsive on smaller screens */
+}
+
+.containers {
+    flex: 1 1 45%; /* Both divs take ~50% width and adjust on resize */
+    box-sizing: border-box;
+}
+
+.section-1 img {
+    max-width: 100%; /* Makes image responsive */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.welcome-section {
+    color: #333;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.intro-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
+    white-space: pre-line; /* Allows line breaks using `-` and newlines */
+}
