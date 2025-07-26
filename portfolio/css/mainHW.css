@@ -16,7 +16,7 @@ header {
 .main-area {
     max-width: 1200px; /* Limits the max width */
     margin: 20px auto;
-    background-color: rgba(255, 217, 0);
+    background-color: rgb(140, 146, 146);
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -65,6 +65,13 @@ header {
     text-decoration: underline;
     color: #0056b3;
 }
-
+#back-Btn {
+    background: linear-gradient(90deg, #4950d3, #91929e); 
+    border: none;
+    color:white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease;  */
+}
 
 
