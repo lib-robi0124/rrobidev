@@ -9,12 +9,35 @@ header {
     text-decoration: dotted;
 }
 
-.list-group-item {
-    font-style: italic;
-    color: blue;
-    background-color: aquamarine;
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Space between image and text */
+    padding: 20px;
+    flex-wrap: wrap; /* Makes it responsive on smaller screens */
+}
 
+.containers {
+    flex: 1 1 45%; /* Both divs take ~50% width and adjust on resize */
+    box-sizing: border-box;
+	padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 280px;
 }
-.list-group {
-    max-width: 500px;
+.section-1 {
+    color: #333;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
+.section-2 {
+    color: #333;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+

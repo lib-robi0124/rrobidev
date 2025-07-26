@@ -23,7 +23,7 @@ header {
     justify-content: center; /* ✅ Center the containers horizontally */
 }
 
-.container, .container2 {
+.container1, .container2 {
     flex: 0 1 45%; /* ✅ Make both containers 45% width and shrink/grow as needed */
     border: 1px solid #ddd;
     padding: 20px;
@@ -50,7 +50,7 @@ header {
 .homework-list a {
     display: inline-block;
     width: 100%;
-    max-width: 220px;
+    max-width: 300px;
     text-decoration: none;
     color: white;
     background-color: #007acc;
@@ -66,29 +66,5 @@ header {
     color: #0056b3;
 }
 
-footer {
-    margin-top: 20px;
-    text-align: center;
-    padding: 10px;
-}
 
-footer a {
-    color: #007acc;
-    text-decoration: none;
-    font-weight: bold;
-}
 
-footer a:hover {
-    text-decoration: underline;
-}
-
-#back-Btn {
-    background: linear-gradient(90deg, #4950d3, #91929e);
-    border: none;
-    color: white;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
