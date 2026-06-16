@@ -1,20 +1,23 @@
 body {
     background-color: rgb(240, 235, 235);
 }
+
 header {
     background-color: #007acc;
     color: white;
     padding: 15px;
     text-align: center;
-    text-decoration: dotted;
 }
 
 .list-group-item {
     font-style: italic;
     color: blue;
     background-color: aquamarine;
-
 }
+
+/* Updated for Mobile Responsiveness */
 .list-group {
-    max-width: 500px;
+    width: 100%;       /* Allows the list to shrink smoothly on small mobile phones */
+    max-width: 500px;  /* Prevents the list from stretching wider than 500px on desktop */
+    margin: 0 auto;    /* Centers the list nicely on the desktop page layout */
 }
