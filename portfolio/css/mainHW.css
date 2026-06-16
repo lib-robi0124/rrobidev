@@ -13,44 +13,24 @@ header {
     text-align: center;
 }
 
-.main-area {
-    max-width: 1200px; /* Limits the max width */
-    margin: 20px auto;
-    background-color: rgb(140, 146, 146);
+.container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; /* ✅ Center the containers horizontally */
-}
-
-.container1, .container2 {
-    flex: 0 1 45%; /* ✅ Make both containers 45% width and shrink/grow as needed */
-    border: 1px solid #ddd;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    min-width: 280px;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
 }
 
 .homework-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* ✅ Center-align list items */
 }
 
 .homework-list li {
     margin: 10px 0;
-    width: 100%; /* Ensures buttons take full width inside li */
-    text-align: center;
 }
 
 .homework-list a {
-    display: inline-block;
-    width: 100%;
-    max-width: 300px;
     text-decoration: none;
     color: white;
     background-color: #007acc;
@@ -62,16 +42,20 @@ header {
 
 .homework-list a:hover {
     background-color: #005f99;
-    text-decoration: underline;
-    color: #b30039;
 }
-#back-Btn {
-    background: linear-gradient(90deg, #4950d3, #91929e); 
-    border: none;
-    color:white;
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: #007acc;
+    text-decoration: none;
     font-weight: bold;
-    letter-spacing: 1px;
-    /* transition: transform 0.3s ease, box-shadow 0.3s ease;  */
 }
 
-
+footer a:hover {
+    text-decoration: underline;
+}

@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/mainHW.css" />
-    <title>Skills</title>
-  </head>
-  <body>
-  <ul class="nav nav-pills" >
-        <li class="nav-item" >
-          <a class="nav-link active" aria-current="page" href="../../index.html">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="index.html">SKILLS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../homeworks/index.html">Academy homeworks</a>
-        </li>
-     </ul>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills & Expertise</title>
+    <link rel="stylesheet" href="../css/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/skills.css" />
+</head>
+<body class="bg-light">
 
-    <header>
-      <h1>Skills and Education</h1>
-    </header>
-<div class="main-area">
-    <div class="container1">
-      <ul class="homework-list">
-        <li><a
-        href="windows-storage/windows.html"
-        class="list-group-item list-group-item-action">
-        Microsoft Windows servers</a></li>
-        <br>
-        <li><a
-        href="others/others.html"
-        class="list-group-item list-group-item-action">
-        SQL, AIX , SCCM , Veeam</a></li>
-        <br>
-        <li><a
-        href="projects/projects.html"
-        class="list-group-item list-group-item-action">
-		Programming & Infrastructure Projects</a></li>
-      </ul>
-    </div>
-    <div class="container2">
-      <ul class="homework-list">
-        <li><a
-        class="list-group-item list-group-item-action">
-        High School Mathematics & IT</a></li>
-        <br>
-        <li> <a
-        class="list-group-item list-group-item-action">
-        College Mathematics UKIM PMF – senior student</a></li>
-        <br>
-        <li><a
-        class="list-group-item list-group-item-action">
-        Microsoft Certified Professional (MCP)</a></li>
-		<li><a
-        class="list-group-item list-group-item-action">
-		    Qinshift Academy (frontend programming)</a></li>
-      </ul>
-    </div>
-  </div>
- </body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top mb-5">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="../../index.html">Robert's Portfolio</a>
+            <div class="navbar-nav ms-auto flex-row">
+                <a class="nav-link px-3" href="../../portfolio/education/index.html">Education</a>
+                <a class="nav-link active bg-primary rounded px-3 text-white fw-semibold" href="../../portfolio/skills/index.html">Skills</a>
+                <a class="nav-link px-3 text-white-50" href="../../portfolio/tasks/index.html">Milestones 2024/25</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="row mb-4">
+            <div class="col-lg-10">
+                <h1 class="fw-bold text-dark display-5">Core Systems Expertise</h1>
+                <p class="text-muted fs-5">Two decades of enterprise-level infrastructure architecture, security configuration, and operational systems engineering.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5 justify-content-center">
+            
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="h5 card-title fw-bold text-dark mb-3">Windows & Directory Infrastructure</h3>
+                            <p class="card-text text-muted small">Full-scope identity management, directory service design, secure boundary definitions, and bare-metal server configurations.</p>
+                            <div class="mb-4">
+                                <span class="badge bg-secondary text-dark bg-opacity-10 px-2.5 py-1.5 rounded text-primary border border-primary border-opacity-25 me-1 mb-2 d-inline-block">Domain Admin</span>
+                                <span class="badge bg-secondary text-dark bg-opacity-10 px-2.5 py-1.5 rounded text-primary border border-primary border-opacity-25 me-1 mb-2 d-inline-block">Active Directory</span>
+                                <span class="badge bg-secondary text-dark bg-opacity-10 px-2.5 py-1.5 rounded text-primary border border-primary border-opacity-25 me-1 mb-2 d-inline-block">DNS / DHCP</span>
+                                <span class="badge bg-secondary text-dark bg-opacity-10 px-2.5 py-1.5 rounded text-primary border border-primary border-opacity-25 me-1 mb-2 d-inline-block">Hyper-V</span>
+                            </div>
+                        </div>
+                        <a href="windows-storage/windows.html" class="btn btn-outline-primary btn-sm w-100 mt-auto">Explore Windows Ecosystem</a>
+                    </div>
+                </div>
+            </div>
+
+         <!-- Category 2: Enterprise Architecture & Projects (Pillar 2) -->
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm border-top border-warning border-3">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="h5 card-title fw-bold text-dark mb-3">Enterprise Systems & Architecture</h3>
+                            <p class="card-text text-muted small">Global system integration engineering, corporate database networks, cross-border ERP environments, and Manufacturing Execution Systems (MES).</p>
+                            <div class="mb-4">
+                                <span class="badge bg-secondary text-dark bg-opacity-10 px-2.5 py-1.5 rounded text-warning border border-warning border-opacity-25 me-1 mb-2 d-inline-block">SAP Rollouts</span>
+                                <span class="badge bg-secondary text-dark bg-opacity-10 px-2.5 py-1.5 rounded text-warning border border-warning border-opacity-25 me-1 mb-2 d-inline-block">ERP-MES</span>
+                                <span class="badge bg-secondary text-dark bg-opacity-10 px-2.5 py-1.5 rounded text-warning border border-warning border-opacity-25 me-1 mb-2 d-inline-block">BI Microstrategy</span>
+                                <span class="badge bg-secondary text-dark bg-opacity-10 px-2.5 py-1.5 rounded text-warning border border-warning border-opacity-25 me-1 mb-2 d-inline-block">SQL Server</span>
+                            </div>
+                        </div>
+                        <a href="projects/projects.html" class="btn btn-outline-warning btn-sm text-dark w-100 mt-auto">View Architecture Projects</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="p-4 bg-dark text-white rounded shadow-sm d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div class="mb-3 mb-md-0">
+                        <h4 class="h5 fw-bold text-warning mb-1">Looking for Software Engineering & Coding?</h4>
+                        <p class="mb-0 text-white-50 small">My active full-stack developments, Academy tasks, and programming solutions are compiled in the modern milestones directory.</p>
+                    </div>
+                    <a href="../../portfolio/tasks/index.html" class="btn btn-warning fw-semibold text-dark px-4 flex-shrink-0">View Coding Milestones →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row border-top pt-4 mb-5">
+            <div class="col">
+                <a href="../../index.html" class="btn btn-link text-decoration-none text-muted p-0">
+                    ← Back to Main Portfolio
+                </a>
+            </div>
+        </div>
+    </main>
+
+</body>
 </html>

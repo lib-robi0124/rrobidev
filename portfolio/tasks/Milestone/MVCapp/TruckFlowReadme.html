@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>TruckFlow Logistics — Technical Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/skills.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333333;
+        }
+        .doc-sidebar {
+            position: sticky;
+            top: 90px;
+            height: calc(100vh - 110px);
+            overflow-y: auto;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .code-syntax {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Courier New', monospace;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            border-left: 4px solid #198754;
+        }
+        .layer-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.35rem 0.65rem;
+            border-radius: 4px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark shadow-sm sticky-top">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1 fw-bold text-uppercase fs-6 text-success">
+                🚛 TruckFlow Architecture Specification
+            </span>
+            <a href="Index.html" class="btn btn-sm btn-outline-light fw-semibold">
+                ← Back to App Index
+            </a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row g-4">
+            
+            <div class="col-lg-3 d-none d-lg-block">
+                <div class="doc-sidebar p-3 bg-white rounded shadow-sm">
+                    <h6 class="fw-bold text-muted uppercase small mb-3">System Sections</h6>
+                    <nav class="nav flex-column gap-1 small">
+                        <a class="nav-link text-dark py-1 px-2" href="#system-overview">⚙️ System Overview</a>
+                        <a class="nav-link text-dark py-1 px-2" href="#domain-architecture">🏢 Domain Layer</a>
+                        <a class="nav-link text-dark py-1 px-2" href="#core-logic">🧮 Lowest-Price Engine</a>
+                        <a class="nav-link text-dark py-1 px-2" href="#lifecycle-flow">🔄 10-Step Order Flow</a>
+                        <a class="nav-link text-dark py-1 px-2" href="#fixed-issues">🛠️ Resolved Engineering Challenges</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                
+                <div class="p-4 p-md-5 mb-4 text-white rounded bg-success shadow">
+                    <div class="col-md-10 px-0">
+                        <span class="badge bg-light text-success uppercase fw-bold mb-2">Logistics & Supply Chain Module</span>
+                        <h1 class="display-5 fw-bold">TruckFlow — Loading & Scheduling App</h1>
+                        <p class="lead my-3 text-white-800">An automated contract management, smart transporter routing, and fulfillment tracking system powered by an asynchronous pricing calculation matrix.</p>
+                    </div>
+                </div>
+
+                <div class="card p-4" id="system-overview">
+                    <h3 class="h4 fw-bold text-dark mb-3 border-bottom pb-2">⚙️ System Architectural Layers</h3>
+                    <p class="text-muted small">
+                        The platform is divided into 4 core architectural projects adhering to clear separation of concerns, decoupling enterprise business policies from database storage contexts.
+                    </p>
+                    <div class="row g-3 text-center small fw-semibold">
+                        <div class="col-6 col-sm-3">
+                            <div class="p-3 bg-light rounded border">
+                                <div class="text-success h6 mb-1">VehicleApp.Domain</div>
+                                <span class="text-muted text-uppercase font-monospace" style="font-size: 10px;">Entities & Enums</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="p-3 bg-light rounded border">
+                                <div class="text-success h6 mb-1">VehicleApp.Infrastructure</div>
+                                <span class="text-muted text-uppercase font-monospace" style="font-size: 10px;">EF Core & Repos</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="p-3 bg-light rounded border">
+                                <div class="text-success h6 mb-1">VehicleApp.Application</div>
+                                <span class="text-muted text-uppercase font-monospace" style="font-size: 10px;">Services & Core Logic</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="p-3 bg-light rounded border">
+                                <div class="text-success h6 mb-1">VehicleApp.Workers</div>
+                                <span class="text-muted text-uppercase font-monospace" style="font-size: 10px;">Background Tasks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-4" id="domain-architecture">
+                    <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                        <h4 class="h5 fw-bold text-dark mb-0">🏢 Domain Architecture Mapping</h4>
+                        <span class="badge bg-success layer-badge">Core Entities</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover small mb-0">
+                            <thead>
+                                <tr class="table-light">
+                                    <th style="width: 25%">Entity Component</th>
+                                    <th>Business Operations Scope</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>Transporter.cs</code></td><td>Maintains carrier records, baseline point of contact data, and active service contracts.</td></tr>
+                                <tr><td><code>Contract.cs</code></td><td>Defines legal SLA dates, global active periods, and connects transporters to specific condition matrices.</td></tr>
+                                <tr><td><code>Condition.cs</code></td><td>Holds destination parameters, unique pricing limits, fuel-liter indexes, and base structural prices per metric town.</td></tr>
+                                <tr><td><code>Order.cs</code></td><td>The central transactional unit tracking active statuses (<code>Pending</code>, <code>Approved</code>, <code>Finished</code>), assignment weights, and container registration plates.</td></tr>
+                                <tr><td><code>Company.cs</code></td><td>Profiles corporate client records requesting industrial shipping allocations.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card p-4" id="core-logic">
+                    <h3 class="h4 fw-bold text-dark mb-3 border-bottom pb-2">🧮 Core Business Logic: Smart Transporter Selection</h3>
+                    <p class="text-muted small text-justify">
+                        When an administrator initiates a transport request, the <code>OrderService</code> dynamically reads through the condition matrix layer. It queries the data registry, filters out expired parameters, evaluates fuel adjustment calculations, and isolates the specific transporter offering the **absolute lowest contract price** for that unique destination city.
+                    </p>
+                    <h5 class="h6 fw-bold text-success">Algorithm Implementation Strategy:</h5>
+                    <pre class="code-syntax">
+public async Task&lt;Transporter?&gt; GetCheapestTransporterForDestinationAsync(int cityId, decimal weight)
+{
+    var validConditions = await _context.Conditions
+        .Include(c => c.Contract)
+        .ThenInclude(con => con.Transporter)
+        .Where(c => c.CityId == cityId && c.Contract.IsActive && c.Contract.EndDate >= DateTime.UtcNow)
+        .ToListAsync();
+
+    return validConditions
+        .OrderBy(c => c.CalculateFormulaPrice(weight))
+        .Select(c => c.Contract.Transporter)
+        .FirstOrDefault();
+}</pre>
+                </div>
+
+                <div class="card p-4" id="lifecycle-flow">
+                    <h3 class="h4 fw-bold text-dark mb-3 border-bottom pb-2">🔄 The 10-Step Order Lifecycle Flow</h3>
+                    <div class="row g-2 small">
+                        <div class="col-12 border-start border-success border-3 ps-3 mb-2">
+                            <h6>Step 1: Contract Initialization</h6>
+                            <p class="text-muted mb-0">Administrator registers Transporters and uploads active fixed pricing arrays per City.</p>
+                        </div>
+                        <div class="col-12 border-start border-success border-3 ps-3 mb-2">
+                            <h6>Step 2: Order Entry Creation</h6>
+                            <p class="text-muted mb-0">Administrator enters client requests for a shipping assignment.</p>
+                        </div>
+                        <div class="col-12 border-start border-success border-3 ps-3 mb-2">
+                            <h6>Step 3: Best Price Routing Engine Execution</h6>
+                            <p class="text-muted mb-0">System automatically selects the lowest cost transporter via internal LINQ conditions.</p>
+                        </div>
+                        <div class="col-12 border-start border-success border-3 ps-3 mb-2">
+                            <h6>Step 4: SMTP Relay Notification Dispatch</h6>
+                            <p class="text-muted mb-0">System acts as an email relay, dispatching secure job offers directly to the selected transporter.</p>
+                        </div>
+                        <div class="col-12 border-start border-success border-3 ps-3 mb-2">
+                            <h6>Step 5: Carrier Truck Registration Placement</h6>
+                            <p class="text-muted mb-0">Transporter logs in and enters the assigned truck registration plate numbers into the tracking form.</p>
+                        </div>
+                        <div class="col-12 border-start border-success border-3 ps-3 mb-2">
+                            <h6>Step 6: Status Promotion to Approved</h6>
+                            <p class="text-muted mb-0">Once plate criteria values validate, order records change status fields from <code>Pending</code> to <code>Approved</code>.</p>
+                        </div>
+                        <div class="col-12 border-start border-success border-3 ps-3 mb-2">
+                            <h6>Step 7: Automated SLA Workers Guard</h6>
+                            <p class="text-muted mb-0">An internal background worker monitoring the queue triggers an expiration if a carrier fails to assign a plate registration within a strict 2-day SLA window.</p>
+                        </div>
+                        <div class="col-12 border-start border-success border-3 ps-3 mb-2">
+                            <h6>Step 8: Auto-Fallback Re-routing Execution</h6>
+                            <p class="text-muted mb-0">Upon an SLA expiration, the system flags the order back to <code>Pending</code>, stripes the current assignment, and automatically assigns the next lowest-priced transporter.</p>
+                        </div>
+                        <div class="col-12 border-start border-success border-3 ps-3 mb-2">
+                            <h6>Step 9: Plant Loading Bay Dispatch Verification</h6>
+                            <p class="text-muted mb-0">The physical truck enters the loading zones; dispatch note CSV files compile directly into the application context.</p>
+                        </div>
+                        <div class="col-12 border-start border-success border-3 ps-3">
+                            <h6>Step 10: Lifecycle Process Closure</h6>
+                            <p class="text-muted mb-0">The platform reads the incoming manifests, completes order updates, and converts the workflow state to <code>Finished</code>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-4" id="fixed-issues">
+                    <h3 class="h4 fw-bold text-dark mb-3 border-bottom pb-2">🛠️ Resolved Architectural & Engineering Challenges</h3>
+                    <ul class="list-group list-group-flush small">
+                        <li class="list-group-item px-0">
+                            <strong>1. Optimizing Complex Dropdown Overloads (150+ Duplicate Records Slimmed to 8 Distinct Cities)</strong><br />
+                            <span class="text-muted">Problem:</span> The destination dropdown parsed every individual database record node, over-allocating HTML DOM structures.<br />
+                            <span class="text-success">Solution:</span> Rewrote components inside <code>PopulateOrderDropdowns()</code> to query the unique city enum keys utilizing programmatic grouping logic:
+                            <code class="d-block bg-light p-1 mt-1 font-monospace">.GroupBy(d => d.City).Select(g => g.First())</code>
+                        </li>
+                        <li class="list-group-item px-0">
+                            <strong>2. Managing High Volume Relational AutoMapper Graph Mappings</strong><br />
+                            <span class="text-muted">Problem:</span> Upgrading system components from legacy configurations to newer core infrastructure profiles introduced entity dependency injection exceptions.<br />
+                            <span class="text-success">Solution:</span> Reconfigured decoupled dependency setups, ensuring explicit profile registries bind accurately across multi-level domain entities during compilation execution.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

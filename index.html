@@ -4,45 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./portfolio/css/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="./portfolio/css/welcome.css">
     <title>Document</title>
 </head>
 <body>
- 
-    <ul class="nav nav-pills" >
-         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="portfolio/skills/index.html">SKILLS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="portfolio/homeworks/index.html">Academy homeworks</a>
-        </li>
-        
-      </ul>
-
-    <div class="container">
-        <div class="mt-4 bg-light text-dark rounded">
-            <h1 class="text-left" style="color: rgb(64, 64, 219);"></h1>
-        </div>
-    </div>
-    <main>
-        <div class="wrapper">
-          <div class="containers section-1">
-            <img src="portfolio.jpg" max-width="700" height="380" />
-          </div>
-          <div class="containers welcome-section">
-            <h1 style="color: rgb(64, 64, 219);">Quinshift academy</h1>
-            <h2 style="color: rgb(64, 64, 219);">and working expiriance</h2>
-
-            <div class="intro-text">
-              - 🌐 Frontend (HTML, CSS, Bootstrap)
-              - 🧠 Programming (JavaScript, AJS)
-              - 🧱 Backend (C#, ASP.NET MVC)
-              - 🛢️ Databases (SQL Server)
-              - 💻 Infrastructure (Windows Server, SAP, SCCM)
+    <!-- Professional Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase tracking-wider" href="#">Robert's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50 me-2" href="portfolio/skills/index.html">Skills & Expertise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50 me-2" href="portfolio/education/index.html">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="portfolio/tasks/index.html">Milestones 2024/25</a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-      </main>
-  
+    </nav>
+
+    <!-- Hero / Introduction Section -->
+    <header class="py-5 bg-light border-bottom">
+        <div class="container my-5">
+            <div class="row align-items-center align-items-xl-center g-5">
+                <!-- Left Column: Intro Text -->
+                <div class="col-lg-7 col-xl-6 text-center text-lg-start">
+                    <span class="text-primary text-uppercase fw-bold tracking-wider sm-title block mb-2">Welcome to my Portfolio</span>
+                    <h1 class="display-4 fw-bold text-dark mb-3">Hi, I'm Robert</h1>
+                    <p class="lead text-muted mb-4 fs-4">
+                        A seasoned systems engineer leveraging 20 years of enterprise industry experience, combining deep domain logic with advanced modern technical frameworks.
+                    </p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center justify-content-lg-start">
+                        <a href="portfolio/skills/index.html" class="btn btn-primary btn-lg px-4 me-sm-3">View My Expertise</a>
+                        <a href="#professional-background" class="btn btn-outline-secondary btn-lg px-4">Background & Trajectory</a>
+                    </div>
+                </div>
+                <!-- Right Column: Professional Profile Image -->
+                <div class="col-10 col-sm-8 col-lg-5 col-xl-6 mx-auto">
+                    <img src="portfolio.jpg" class="d-block mx-lg-auto img-fluid rounded-3 shadow-lg" alt="Robert - Professional Profile" width="600" height="400" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Anchored Background Hub Section -->
+    <section id="professional-background" class="py-5 bg-white">
+        <div class="container my-4">
+            <div class="row mb-4 text-center text-lg-start">
+                <div class="col-10 mx-auto mx-lg-0">
+                    <h2 class="fw-bold text-dark">Background & Career Track</h2>
+                    <p class="text-muted">Explore foundational academic credentials alongside intensive system engineering track data.</p>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Academic Card -->
+                <div class="col-md-5">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark">Education & Certifications</h3>
+                                <p class="text-muted small">Formal academic profiles, academy specializations, and professional credential tracks.</p>
+                            </div>
+                            <a href="portfolio/education/index.html" class="btn btn-sm btn-outline-primary w-100 mt-3">View Academic Timeline</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Milestones Card -->
+                <div class="col-md-5">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark">Milestones 2024/25</h3>
+                                <p class="text-muted small">Targeted engineering deep-dives, specialized tasks, and high-impact functional implementations.</p>
+                            </div>
+                            <a href="portfolio/tasks/index.html" class="btn btn-sm btn-outline-primary w-100 mt-3">Browse Recent Tasks</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

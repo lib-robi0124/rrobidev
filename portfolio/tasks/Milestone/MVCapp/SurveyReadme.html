@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>GlasAnketa — Technical Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/skills.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333333;
+        }
+        .doc-sidebar {
+            position: sticky;
+            top: 90px;
+            height: calc(100vh - 110px);
+            overflow-y: auto;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .code-syntax {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Courier New', monospace;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            border-left: 4px solid #0dcaf0;
+        }
+        .layer-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.35rem 0.65rem;
+            border-radius: 4px;
+        }
+        .nav-link.active-doc {
+            background-color: #e9ecef;
+            color: #0d6efd;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark shadow-sm sticky-top">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1 fw-bold text-uppercase fs-6 text-info">
+                📄 System Architecture Specification
+            </span>
+            <a href="Index.html" class="btn btn-sm btn-outline-light fw-semibold">
+                ← Back to App Index
+            </a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row g-4">
+            
+            <div class="col-lg-3 d-none d-lg-block">
+                <div class="doc-sidebar p-3 bg-white rounded shadow-sm">
+                    <h6 class="fw-bold text-muted uppercase small mb-3">Documentation Sections</h6>
+                    <nav class="nav flex-column gap-1 small">
+                        <a class="nav-link text-dark py-1 px-2" href="#tech-stack">⚙️ Core Technology Stack</a>
+                        <a class="nav-link text-dark py-1 px-2" href="#code-map">📂 System Code Map</a>
+                        <a class="nav-link text-secondary ps-3 py-0" href="#layer-domain">- Domain Layer</a>
+                        <a class="nav-link text-secondary ps-3 py-0" href="#layer-data">- Data Layer</a>
+                        <a class="nav-link text-secondary ps-3 py-0" href="#layer-services">- Service Layer</a>
+                        <a class="nav-link text-secondary ps-3 py-0" href="#layer-controllers">- Controllers</a>
+                        <a class="nav-link text-dark py-1 px-2" href="#execution-flow">🔄 Lifecycle & Flows</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                
+                <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark shadow">
+                    <div class="col-md-10 px-0">
+                        <span class="badge bg-info text-dark uppercase fw-bold mb-2">Enterprise Project Profile</span>
+                        <h1 class="display-5 fw-bold">GlasAnketa — Employee Satisfaction Survey System</h1>
+                        <p class="lead my-3 text-white-50">An internal web application architecture optimized for secure, anonymous corporate data-collection and structural trend analysis reporting.</p>
+                    </div>
+                </div>
+
+                <div class="card p-4" id="tech-stack">
+                    <h3 class="h4 fw-bold text-dark mb-3 border-bottom pb-2">🛠️ Core Technology Stack</h3>
+                    <div class="row g-3 text-center small fw-semibold">
+                        <div class="col-6 col-sm-3">
+                            <div class="p-3 bg-light rounded border">
+                                <div class="text-primary h5 mb-1">.NET 8.0</div>
+                                <span class="text-muted text-uppercase font-monospace" style="font-size: 11px;">Framework</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="p-3 bg-light rounded border">
+                                <div class="text-success h5 mb-1">EF Core</div>
+                                <span class="text-muted text-uppercase font-monospace" style="font-size: 11px;">Data Access</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="p-3 bg-light rounded border">
+                                <div class="text-info h5 mb-1">SQL Server</div>
+                                <span class="text-muted text-uppercase font-monospace" style="font-size: 11px;">Database</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="p-3 bg-light rounded border">
+                                <div class="text-warning h5 mb-1">Session State</div>
+                                <span class="text-muted text-uppercase font-monospace" style="font-size: 11px;">Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-2 mb-3" id="code-map">
+                    <h3 class="h4 fw-bold text-dark">📂 System Code Map & Component Intent</h3>
+                    <p class="text-muted small">Detailed decomposition of physical layers defining technical responsibilities and runtime operational boundaries.</p>
+                </div>
+
+                <div class="card p-4" id="layer-domain">
+                    <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                        <h4 class="h5 fw-bold text-dark mb-0">1. Domain Layer</h4>
+                        <span class="badge bg-primary layer-badge">GlasAnketa.Domain/Models</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover small mb-0">
+                            <thead>
+                                <tr class="table-light">
+                                    <th style="width: 25%">Entity Component</th>
+                                    <th>Technical Scope & Analytical Intent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>User.cs</code></td><td>Represents authenticated records; stores metadata identifiers (Company, Role, OUs) alongside demographics (Age, Experience).</td></tr>
+                                <tr><td><code>QuestionForm.cs</code></td><td>Modular survey template container grouping array nodes; contains <code>IsActive</code> evaluation controls.</td></tr>
+                                <tr><td><code>Question.cs</code></td><td>Defines target query inputs; dictates required validation patterns and maps to layout settings.</td></tr>
+                                <tr><td><code>QuestionType.cs</code></td><td>System lookup keys defining variations like linear <code>Scale</code> grids (1-10) or open multi-line <code>Text</code> commentary blocks.</td></tr>
+                                <tr><td><code>Answer.cs</code></td><td>Captures responses joined directly to demographics while entirely isolating individual user IDs to enforce total submission privacy.</td></tr>
+                                <tr><td><code>AnswerSummary.cs</code></td><td>Unbound computation transfer objects parsing averages, percentages, and string vectors for metrics processing.</td></tr>
+                                <tr><td><code>Role.cs</code></td><td>Enforces role-based permissions matrix segments (<code>Administrator</code>, <code>Employee</code>, <code>Manager</code>).</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card p-4" id="layer-data">
+                    <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                        <h4 class="h5 fw-bold text-dark mb-0">2. Data Access Layer</h4>
+                        <span class="badge bg-success layer-badge">GlasAnketa.DataAccess</span>
+                    </div>
+                    <ul class="list-group list-group-flush small">
+                        <li class="list-group-item px-0"><strong><code>AppDbContext.cs</code>:</strong> Houses SQL transaction contexts, handles model schema keys, and forces <code>DeleteBehavior.NoAction</code> overrides to safeguard data integrity.</li>
+                        <li class="list-group-item px-0"><strong><code>DataSeedExtensions.cs</code>:</strong> Direct database seeding interface injectors mapping core configurations and identity configurations during migrations.</li>
+                        <li class="list-group-item px-0"><strong><code>Repository.cs</code>:</strong> Implements decoupled generic async patterns (<code>GetActiveAsync</code>, <code>GetAllAsync</code>, <code>AddAsync</code>).</li>
+                        <li class="list-group-item px-0"><strong><code>AnswerRepository.cs</code>:</strong> Orchestrates bulk data inputs and handles cross-joining queries for group averages.</li>
+                        <li class="list-group-item px-0"><strong><code>QuestionFormRepository.cs</code>:</strong> Manages complex relational loading operations, multi-form loops, and state changes.</li>
+                    </ul>
+                </div>
+
+                <div class="card p-4" id="layer-services">
+                    <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                        <h4 class="h5 fw-bold text-dark mb-0">3. Business Logic Service Layer</h4>
+                        <span class="badge bg-info text-dark layer-badge">GlasAnketa.Services</span>
+                    </div>
+                    <ul class="list-group list-group-flush small">
+                        <li class="list-group-item px-0"><strong><code>InjectionExtensions.cs</code>:</strong> IoC injection root mapping operational boundaries (Scoped/Transient) cleanly into the .NET runtime core.</li>
+                        <li class="list-group-item px-0"><strong><code>AnswerService.cs</code>:</strong> Evaluates transactional constraints and models before allowing entries to push down to standard repositories.</li>
+                        <li class="list-group-item px-0"><strong><code>ReportService.cs</code>:</strong> Executes high-performance non-blocking query routines processing arrays (Age buckets, Experience ranges, and structural OU grids).</li>
+                        <li class="list-group-item px-0"><strong><code>QuestionFormService.cs</code> / <code>QuestionService.cs</code>:</strong> Validates states; explicitly blocks modifications or removals if a survey form is live in production.</li>
+                        <li class="list-group-item px-0"><strong><code>UserService.cs</code>:</strong> Governs authentication controls, cryptographic verification patterns, and account metadata adjustments.</li>
+                    </ul>
+                </div>
+
+                <div class="card p-4" id="layer-controllers">
+                    <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                        <h4 class="h5 fw-bold text-dark mb-0">4. Controller & Presentation Layer</h4>
+                        <span class="badge bg-warning text-dark layer-badge">GlasAnketa.Controllers</span>
+                    </div>
+                    <ul class="list-group list-group-flush small">
+                        <li class="list-group-item px-0"><strong><code>AccountController.cs</code>:</strong> Handles form authentication targets, maps session parameters, and assigns custom navigation roots based on role scopes.</li>
+                        <li class="list-group-item px-0"><strong><code>QuestionnaireController.cs</code>:</strong> Checks operational request tokens, serves structural forms, and maps view state targets for employees.</li>
+                        <li class="list-group-item px-0"><strong><code>AnswerController.cs</code>:</strong> Intercepts complex array posts via HTTP POST and forwards model maps to backend business orchestrators.</li>
+                        <li class="list-group-item px-0"><strong><code>AdminController.cs</code>:</strong> Secure dashboard panel handling structure operations and user registries.</li>
+                        <li class="list-group-item px-0"><strong><code>ReportsController.cs</code>:</strong> Feeds management charts asynchronously and manages secure flat-file document download engines.</li>
+                    </ul>
+                </div>
+
+                <div class="card p-4" id="execution-flow">
+                    <h3 class="h4 fw-bold text-dark mb-3 border-bottom pb-2">🔄 End-to-End Application Lifecycle Flow</h3>
+                    
+                    <h5 class="h6 fw-bold text-primary mt-2">1. Startup Runtime Pipeline (Program.cs)</h5>
+                    <p class="text-muted small">Initializes configuration blocks, caching services, dynamic object profiles, and mounts sequential middleware rules:</p>
+                    <div class="p-2 bg-light border text-center rounded small mb-4 font-monospace fw-bold text-secondary" style="font-size: 11px;">
+                        HTTPS Redirect &rarr; Static Assets &rarr; Routing Engine &rarr; Authentication &rarr; Authorization Filter &rarr; Session Context
+                    </div>
+
+                    <h5 class="h6 fw-bold text-primary">2. Session Setup & Authorization Injection</h5>
+                    <p class="text-muted small">Verifies identities via secure tokens via <code>[ValidateAntiForgeryToken]</code> and assigns state metadata values directly into the server state matrix:</p>
+                    <pre class="code-syntax">
+HttpContext.Session.SetInt32("UserId", user.Id);
+HttpContext.Session.SetString("UserRole", user.Role.Name);
+HttpContext.Session.SetInt32("CompanyId", user.CompanyId);</pre>
+
+                    <h5 class="h6 fw-bold text-primary mt-4">3. Transactional ACID Data Injection Protocol</h5>
+                    <p class="text-muted small">Wraps submissions in isolated transactional contexts. To prevent duplicate submissions during sequential forms, the data engine clears historical traces matching the Active User and Form ID values before committing the final record payloads:</p>
+                    <pre class="code-syntax">
+DELETE FROM Answers 
+WHERE UserId = @userId 
+  AND QuestionId IN (SELECT Id FROM Questions WHERE QuestionFormId = @formId)</pre>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Architecture & Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/skills.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; font-family: 'Consolas', monospace; border-radius: 6px; padding: 15px; overflow-x: auto; font-size: 0.85rem; }
+        .tech-badge { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .card { border: none !important; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important; }
+    </style>
+</head>
+
+<body class="bg-light" id="top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="../../../../index.html">Robert's Portfolio</a>
+            <div class="navbar-nav ms-auto flex-row">
+                <a class="nav-link px-3 text-white-50" href="../../education/index.html">Experience & Education</a>
+                <a class="nav-link px-3 text-white-50" href="../../skills/index.html">Skills</a>
+                <a class="nav-link active bg-info rounded px-3 text-dark fw-semibold" href="Index.html">MVCapp</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <div class="row mb-4">
+            <div class="col-lg-8">
+                <span class="badge bg-info text-dark px-3 py-2 text-uppercase mb-2 fw-semibold">Backend Engineering</span>
+                <h1 class="fw-bold text-dark display-5">.NET Core MVC Systems</h1>
+                <p class="text-muted fs-5">Production-ready business applications designed for internal automation, complex relational logistics tracking, and enterprise resource procurement.</p>
+            </div>
+        </div>
+
+        <div class="row g-2 mb-5">
+            <div class="col-md-4">
+                <a href="#app-survey" class="card h-100 p-3 shadow-sm border-0 border-start border-primary border-4 text-decoration-none bg-white">
+                    <h5 class="fw-bold text-primary mb-1">1. GlasAnketa</h5>
+                    <p class="text-muted small mb-0">Employee Satisfaction Survey System</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#app-truck" class="card h-100 p-3 shadow-sm border-0 border-start border-success border-4 text-decoration-none bg-white">
+                    <h5 class="fw-bold text-success mb-1">2. TruckFlow Logistics</h5>
+                    <p class="text-muted small mb-0">Contract & Transporter Routing System</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#app-comet" class="card h-100 p-3 shadow-sm border-0 border-start border-warning border-4 text-decoration-none bg-white">
+                    <h5 class="fw-bold text-warning mb-1">3. Comet Procurement</h5>
+                    <p class="text-muted small mb-0">NCO Bidding & Material Clearinghouse</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-5" id="app-survey">
+            <div class="card-header bg-primary text-white p-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div>
+                        <h2 class="h4 fw-bold mb-0">1. GlasAnketa — Employee Satisfaction System</h2>
+                        <small class="opacity-75">Secured Anonymity Data-Collection Infrastructure</small>
+                    </div>
+                    <div class="mt-2 mt-md-0">
+                        <span class="badge bg-light text-primary mx-1 tech-badge">.NET 8.0</span>
+                        <span class="badge bg-light text-primary mx-1 tech-badge">EF Core</span>
+                        <span class="badge bg-light text-primary mx-1 tech-badge">SQL Server</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-4 bg-white">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <h4 class="h6 text-uppercase fw-bold text-primary">System Architecture & Intent</h4>
+                        <p class="text-muted small text-justify">
+                            Developed an internal survey management web infrastructure allowing organizational leadership to deploy target questionnaires to track operational satisfaction trends. Built around strict data processing constraints, the pipeline encapsulates a robust session check to validate access metrics while keeping response metrics independent to guarantee anonymity.
+                        </p>
+
+                        <h4 class="h6 text-uppercase fw-bold text-primary mt-4">Core Structural Entities</h4>
+                        <ul class="text-muted small">
+                            <li><strong>User:</strong> Holds demographic buckets (Age, Experience, Team/OU mapping) and security profiles.</li>
+                            <li><strong>QuestionForm & Question:</strong> Operates dynamic sequencing forms supporting Scale (1–10) and Text evaluation inputs.</li>
+                            <li><strong>Answer & AnswerSummary:</strong> Transactional logs evaluating aggregation targets per organizational group.</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <h4 class="h6 text-uppercase fw-bold text-secondary">Transactional Controller Pipeline</h4>
+                        <pre class="code-block text-start mb-0">
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task&lt;IActionResult&gt; SubmitAnswers(FormSubmissionVM model)
+{
+    var userId = HttpContext.Session.GetInt32("UserId");
+    if (userId == null) return RedirectToAction("Login");
+
+    await _answerService.SubmitAnswersAsync(userId.Value, model.QuestionFormId, answers);
+    var nextForm = await _questionFormService.GetNextActiveFormAsync(model.QuestionFormId);
+    
+    return nextForm == null 
+        ? RedirectToAction("ThankYou") 
+        : RedirectToAction("ShowForm", new { formId = nextForm.Id });
+}</pre>
+                    </div>
+                </div>
+                <div class="border-top pt-3 mt-4">
+                    <a href="SurveyReadme.html" class="btn btn-sm btn-primary px-3 fw-semibold" target="_blank">
+                        📝 Repository Documented
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-5" id="app-truck">
+            <div class="card-header bg-success text-white p-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div>
+                        <h2 class="h4 fw-bold mb-0">2. TruckFlow — Loading & Destination Tracker</h2>
+                        <small class="opacity-75">Contract Management & Intelligent Transporter Selection Routing Engine</small>
+                    </div>
+                    <div class="mt-2 mt-md-0">
+                        <span class="badge bg-light text-success mx-1 tech-badge">AutoMapper 16</span>
+                        <span class="badge bg-light text-success mx-1 tech-badge">LINQ Engine</span>
+                        <span class="badge bg-light text-success mx-1 tech-badge">SQL Server 2022</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-4 bg-white">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <h4 class="h6 text-uppercase fw-bold text-success">System Architecture & Intent</h4>
+                        <p class="text-muted small text-justify">
+                            An enterprise tracking application managing contract conditions, dispatch notes, and transport workflows. Features an automated business service logic matrix that reads live carrier parameters to instantly identify and route freight to the transporter holding the absolute lowest active contract price for any destination. Includes background task handlers monitoring a strict 2-day SLA window to execute auto-fallback re-routing rules if plate numbers are delayed.
+                        </p>
+
+                        <h4 class="h6 text-uppercase fw-bold text-success mt-4">Core Structural Entities</h4>
+                        <ul class="text-muted small">
+                            <li><strong>Transporter & Contract:</strong> Binds third-party shipping carriers to active legal terms and operational limits.</li>
+                            <li><strong>Condition & Destination:</strong> Tracks fixed pricing profiles, city enum parameters, and dynamic fuel adjustment values.</li>
+                            <li><strong>Order Management:</strong> Governs dispatch workflows from creation, through <code>Pending</code> plate registration, to <code>Finished</code> delivery manifests.</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <h4 class="h6 text-uppercase fw-bold text-secondary">Algorithmic Best-Price Matching Engine</h4>
+                        <pre class="code-block text-start mb-0">
+public async Task&lt;Transporter?&gt; GetCheapestTransporterAsync(int cityId, decimal weight)
+{
+    var validConditions = await _context.Conditions
+        .Include(c => c.Contract).ThenInclude(con => con.Transporter)
+        .Where(c => c.CityId == cityId && c.Contract.IsActive && c.Contract.EndDate >= DateTime.UtcNow)
+        .ToListAsync();
+
+    return validConditions
+        .OrderBy(c => c.CalculateFormulaPrice(weight))
+        .Select(c => c.Contract.Transporter)
+        .FirstOrDefault();
+}</pre>
+                    </div>
+                </div>
+                <div class="border-top pt-3 mt-4">
+                    <a href="TruckFlowReadme.html" class="btn btn-sm btn-success px-3 fw-semibold" target="_blank">
+                        📝 Repository Documented
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-5" id="app-comet">
+            <div class="card-header bg-warning text-dark p-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div>
+                        <h2 class="h4 fw-bold mb-0">3. Comet — Non-Conforming Output (NCO) Procurement</h2>
+                        <small class="text-dark opacity-75">B2B Material Clearinghouse & Claims-Based Auction Portal</small>
+                    </div>
+                    <div class="mt-2 mt-md-0">
+                        <span class="badge bg-dark text-warning mx-1 tech-badge">Claims Authentication</span>
+                        <span class="badge bg-dark text-warning mx-1 tech-badge">Excel Bulk Ingestion</span>
+                        <span class="badge bg-dark text-warning mx-1 tech-badge">Clean Architecture</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-4 bg-white">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <h4 class="h6 text-uppercase fw-bold text-dark">System Architecture & Intent</h4>
+                        <p class="text-muted small text-justify">
+                            A specialized B2B commerce and bidding framework designed to safely liquidate internal Non-Conforming Output (NCO) industrial components. The platform utilizes an Excel binary stream parsing infrastructure to allow administrators to mass-upload material sheets. Registered buyers participate in active bidding pools protected by strict transaction concurrency safeguards and security checks managed via .NET cookie identity schemas.
+                        </p>
+
+                        <h4 class="h6 text-uppercase fw-bold text-dark mt-4">Core Structural Entities</h4>
+                        <ul class="text-muted small">
+                            <li><strong>Product Model:</strong> Monitors NCO lot entries, weight records, structural specifications, and reserve starting prices.</li>
+                            <li><strong>Bid Log Matrix:</strong> Records secure customer bids matching timestamp indexes to safeguard financial validation tracking paths.</li>
+                            <li><strong>User / Role Schemas:</strong> Grants restricted views dividing management upload panels from public buyer auction layouts.</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <h4 class="h6 text-uppercase fw-bold text-secondary">Real-Time Bid Validation Strategy</h4>
+                        <pre class="code-block text-start mb-0">
+public async Task&lt;bool&gt; ProcessOfferAsync(int buyerId, int productId, decimal offerAmount)
+{
+    var product = await _productRepository.GetByIdAsync(productId);
+    if (product == null || product.IsAuctionClosed || DateTime.UtcNow &gt; product.EndDate) 
+        return false;
+
+    if (offerAmount &lt;= product.CurrentHighestBid) 
+        return false;
+
+    await _productRepository.UpdateHighestBidAsync(productId, offerAmount, buyerId);
+    return true;
+}</pre>
+                    </div>
+                </div>
+                <div class="border-top pt-3 mt-4">
+                    <a href="CometReadme.html" class="btn btn-sm btn-warning text-dark px-3 fw-semibold" target="_blank">
+                        📝 Repository Documented
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row border-top pt-4 mb-5 align-items-center">
+            <div class="col-6 text-start">
+                <a href="../../index.html" class="btn btn-outline-secondary px-4 fw-semibold">
+                    ← Main Portfolio
+                </a>
+            </div>
+            <div class="col-6 text-end">
+                <a href="#top" class="btn btn-dark px-3 fw-semibold">
+                    ▲ Back to Top
+                </a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
